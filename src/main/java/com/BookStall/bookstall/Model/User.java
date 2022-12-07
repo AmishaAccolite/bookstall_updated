@@ -25,7 +25,7 @@ public class User {
     private boolean userStatus;
 
     @Column(name="books_borrowed")
-    private int booksBorrowed;
+    private int booksBorrowed=0;
 
 
     public Integer getUserId() {
@@ -66,5 +66,6 @@ public class User {
     public void setBooksBorrowed(int booksBorrowed) {
         this.booksBorrowed = booksBorrowed;
     }
+
 }
 

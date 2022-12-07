@@ -1,6 +1,8 @@
 package com.BookStall.bookstall.Controller;
 import java.util.List;
 
+import com.BookStall.bookstall.Repository.InventoryRepository;
+import org.hibernate.Session;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -28,6 +30,7 @@ public class BookStoreController {
     {
         return ResponseEntity.ok().body(this.invService.getInventories());
     }
+
     @PostMapping("/addbooks")
     private ResponseEntity<Inventory> saveInventories(@RequestBody Inventory inv)
     {

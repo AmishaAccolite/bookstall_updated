@@ -26,12 +26,18 @@ public class Transaction {
     @Column(name="deposit")
     private int deposit;
     @CreationTimestamp
-    @Column(name="borrowed_time")
-    private Date dateBorrowed;
-    @Column(name="returned_time")
-    private Date dateReturned;
+    @Column(name="Transaction_time")
+    private Date dateTransaction;
+
     @Column(name="refund_balance")
     private int refundBalance;
+
+    @Column(name="Rent_Status")
+    private char rentStatus;
+
+    @Column(name="Current_Wallet_Balance")
+    private int userWalletBalance;
+
     public long getTransactionId() {
         return transactionId;
     }
@@ -56,29 +62,41 @@ public class Transaction {
     public void setDeposit(int deposit) {
         this.deposit = deposit;
     }
-    public Date getDateBorrowed() {
-        return dateBorrowed;
+
+    public char getRentStatus() {
+        return rentStatus;
     }
-    public void setDateBorrowed(Date dateBorrowed) {
-        this.dateBorrowed = dateBorrowed;
+
+    public void setRentStatus(char rentStatus) {
+        this.rentStatus = rentStatus;
     }
-    public Date getDateReturned() {
-        return dateReturned;
+
+    public Date getdateTransaction() {
+        return dateTransaction;
     }
-    public void setDateReturned(Date dateReturned) {
-        this.dateReturned = dateReturned;
+    public void setdateTransaction(Date dateTransaction) {
+        this.dateTransaction = dateTransaction;
     }
+
     public int getRefundBalance() {
         return refundBalance;
     }
     public void setRefundBalance(int refundBalance) {
         this.refundBalance = refundBalance;
     }
-    @Override
-    public String toString() {
-        return "Transaction [transactionId=" + transactionId + ", userId=" + userId + ", bookId=" + bookId
-                + ", deposit=" + deposit + ", dateBorrowed=" + dateBorrowed + ", dateReturned=" + dateReturned
-                + ", refundBalance=" + refundBalance + "]";
+
+    public int getUserWalletBalance() {
+        return userWalletBalance;
     }
+
+    public void setUserWalletBalance(int userWalletBalance) {
+        this.userWalletBalance = userWalletBalance;
+    }
+//    @Override
+//    public String toString() {
+//        return "Transaction [transactionId=" + transactionId + ", userId=" + userId + ", bookId=" + bookId
+//                + ", deposit=" + deposit + ", dateBorrowed=" + dateBorrowed + ", dateReturned=" + dateReturned
+//                + ", refundBalance=" + refundBalance + "]";
+//    }
 
 }

@@ -29,6 +29,7 @@ public class UserServiceImpl implements UserService{
     public User createUser(User user)
     {
         user.setUserStatus(true);
+        user.setBooksBorrowed(0);
         User userAdded=userrepo.save(user);
 
         wallet.setWalletId(userAdded.getUserId());
